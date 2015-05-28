@@ -1,0 +1,499 @@
+@charset "UTF-8";
+/*
+        Theme Name: Base for Web
+        Description: Base for Web　本テーマは店舗・企業用ホームページに適したシンプルな無料テーマです。
+        Theme URI: http://
+        Author: AS-Template　
+        Author URI: http://
+        Version: 1.0.1
+        License: GNU General Public License
+        License URI: http://www.gnu.org/licenses/gpl-2.0.html
+        Tags: 
+*/
+$color_body:#fff;
+$color_main:#000;
+$color_txt:#666;
+$color_fff:#fff;
+$color_ccc:#ccc;
+$color_black:#333;
+$color_line:#666;
+$color_back:#F2F2F2;
+$color_link:#666;
+$color_link2:#ccc;
+
+/****************************************
+
+          WordPress Misc
+
+*****************************************/
+.aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.alignleft {
+    float: left;
+}
+
+.alignright {
+    float: right;
+}
+
+.wp-caption {
+}
+
+.wp-caption-text,
+.gallery-caption {
+    font-size: 80%;
+}
+
+.wp-caption img {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+}
+
+.wp-caption-dd {
+    margin: 0;
+    padding: 0 4px 5px;
+    font-size: 11px;
+    line-height: 17px;
+}
+
+img .alignright {
+    display: block;
+    margin: 0 0 8px 8px;
+}
+
+img.alignleft {
+    display: block;
+    margin: 0 8px 8px 0;
+}
+.sticky {
+    margin:0px;
+}
+.bypostauthor {
+    margin:0px;
+}
+
+/* ================================================== *
+ *
+ *    Helper
+ *
+ * ================================================== */
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left {
+    text-align: left;
+}
+.main_title {
+    border-bottom:double $color_line;
+    padding-bottom:8px;
+}
+.sub_title {
+    font-size:150%;
+    border-bottom:1px solid $color_line;
+    padding-bottom:8px;
+}
+.font-big {
+    font-size:180%;
+}
+.font-small {
+    font-size:80%;
+}
+/* ------------------------------------------------- *
+ *        margin
+ * ------------------------------------------------- */
+.margin-top-lg {
+    margin-top: 60px;
+}
+.margin-top-md {
+    margin-top: 30px;
+}
+.margin-top-sm {
+    margin-top: 15px;
+}
+.margin-bottom-lg {
+    margin-bottom: 60px;
+}
+.margin-bottom-md {
+    margin-bottom: 30px;
+}
+.margin-bottom-sm {
+    margin-bottom: 15px;
+}
+/* ------------------------------------------------- *
+ *        padding
+ * ------------------------------------------------- */
+.padding-top-lg {
+    padding-top: 60px;
+}
+.padding-top-md {
+    padding-top: 30px;
+}
+.padding-top-sm {
+    padding-top: 15px;
+}
+.padding-bottom-lg {
+    padding-bottom: 60px;
+}
+.padding-bottom-md {
+    padding-bottom: 30px;
+}
+.padding-bottom-sm {
+    padding-bottom: 15px;
+}
+
+
+
+/* ================================================== *
+ *
+ *    base style 独自設定はここから
+ *
+ * ================================================== */
+body {
+    background: $color_body;
+    color:$color_txt;
+}
+.inner {
+    max-width: 1012px;
+}
+
+#main_content {
+
+}
+
+#side_content {
+
+}
+
+a {
+    color:$color_link;
+}
+a:hover {
+    color:$color_link2;
+}
+
+
+
+/* ================================================== *
+ *
+ *    content
+ *
+ * ================================================== */
+
+/* ------------------------------------------------- *
+ *        header
+ * ------------------------------------------------- */
+#description {
+    font-size:80%;
+}
+
+header {
+
+    h1 {
+        padding:0px;
+        margin:0px 0px 0px 0px ;
+    }
+    .header_left {
+        text-align: center;
+    }
+    .header_right {
+        text-align: center;
+    }
+}
+
+
+@media(min-width:768px) {
+    header {
+        .header_left {
+            text-align: left;
+        }
+
+        .header_right {
+            text-align: right;
+        }
+    }
+}
+
+/* ------------------------------------------------- *
+ *        GL-Navi
+ * ------------------------------------------------- */
+
+.glnavi {
+    margin-top:32px;
+
+    ul {
+        font-size:85%;
+    }
+
+    .navbar-nav li a {
+        padding:6px 6px 6px 6px;
+        margin:0px 3px 0px 3px ;
+        border-radius: 0px
+    }
+    .navbar-nav li a:hover {
+        background: none;
+    }
+
+
+    /*マウスオーバーのエフェクト*/
+    li a.sample8 {
+        border-bottom:1px dotted $color_ccc;
+        position: relative;
+        z-index: 2;
+    }
+    li a.sample8::after {
+        display: block;
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        margin: auto;
+        color:$color_fff;
+        background: $color_black;
+        transition: .3s;
+    }
+    li a.sample8:hover::after {
+        color:$color_fff;
+        width: 100%;
+        height: 100%;
+    }
+    li a.sample8:hover {
+        color:$color_fff;
+    }
+    /*マウスオーバーのエフェクト*/
+}
+
+@media(min-width:768px) {
+    .navbar {
+        border:0px;
+
+        .navbar-nav {
+            margin: 0 auto;
+            display: table;
+            table-layout: fixed;
+            float:none;
+        }
+    }
+}
+
+/* ------------------------------------------------- *
+ *        Footer
+ * ------------------------------------------------- */
+.page_top {
+    float:right;
+    color:$color_fff;
+    margin-top:8px;
+    margin-bottom:32px;
+
+
+    a {
+        color:$color_fff;
+        border-radius: 10px;
+        padding:8px;
+        background: $color_black;
+        opacity: 0.6
+    }
+    a:hover {
+        color:$color_main;
+        background: $color_ccc;
+        text-decoration:none;
+        opacity: 0.6
+    }
+}
+
+
+.footer_link {
+    clear: both;
+    font-size:90%;
+    margin:8px 0px;
+    padding:8px 0px;
+    border-top:1px dotted $color_line;
+    border-bottom:1px dotted $color_line;
+    /*マウスオーバーのエフェクト*/
+    .sample8 {
+
+        li a{
+            border-bottom:1px dotted $color_ccc;
+            position: relative;
+            z-index: 2;
+        }
+        li a::after {
+            display: block;
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            margin: auto;
+            color:$color_fff;
+            background: $color_black;
+            transition: .3s;
+        }
+        li a:hover::after {
+            color:$color_fff;
+            width: 100%;
+            height: 100%;
+        }
+        li a:hover {
+            color:$color_fff;
+        }
+        /*マウスオーバーのエフェクト*/
+    }
+
+    ul {
+        list-style:none;
+        margin:0px;
+        padding:0px;
+        li {
+            float:left;
+            margin:0px;
+            padding:0px;
+            margin-right:16px;
+        }
+    }
+
+
+}
+.footer_logo_link {
+    border-bottom:1px solid $color_line;
+    margin-top:8px;
+    padding:6px;
+}
+
+
+.row_footer ul {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+
+    li {
+        border-bottom:1px dotted $color_line;
+        padding:6px 3px;
+    }
+}
+
+.fotter-right {
+
+}
+
+.copyright {
+    font-size:75%;
+    clear:both;
+}
+
+/* ================================================== *
+ *
+ *    front-page
+ *
+ * ================================================== */
+/* ------------------------------------------------- *
+ *        Slide
+ * ------------------------------------------------- */
+.jumbotron {
+    border-top:1px dotted $color_ccc;
+    border-bottom:1px dotted $color_ccc;
+    padding:1px 0;
+    background: $color_fff;
+
+    #image_slide {
+        padding:16px 0px;
+        background: url(images/common/slide-bk.png) repeat;
+    }
+}
+
+/* ------------------------------------------------- *
+ *        Pr_Box
+ * ------------------------------------------------- */
+#pr_box {
+    text-align:center;
+
+    img {
+        max-width:46%;
+        margin-bottom:8px;
+        margin-left:4px;
+        margin-right:4px;
+    }
+}
+
+@media(min-width:768px) {
+    #pr_box {
+        text-align:center;
+
+        img {
+            max-width:31%;
+            margin-right:8px;
+            margin-bottom:16px;
+            margin-left:8px;
+        }
+    }
+}
+
+/* ------------------------------------------------- *
+ *        News
+ * ------------------------------------------------- */
+
+.news {
+    margin-bottom:32px;
+}
+.news-list {
+
+    li {
+        padding:8px;
+        margin:1px 0px 0px  0px  ;
+        background:$color_back;
+        border-bottom:1px dotted $color_ccc;
+    }
+
+    p.data {
+        margin-top:16px;
+        color:$color_main;
+    }
+
+    h2 {
+        padding:0px;
+        margin:0px 0px 0px 8px ;
+        font-size:110%;
+    }
+}
+.media img {
+    width:100px;
+    float:left;
+    margin-right:16px;
+}
+
+/* ------------------------------------------------- *
+ *        Welcome
+ * ------------------------------------------------- */
+.welcome {
+
+    img {
+        width:100%;
+    }
+}
+
+@media(min-width:768px) {
+    .welcome {
+
+        img {
+            max-width:250px;
+        }
+    }
+}
