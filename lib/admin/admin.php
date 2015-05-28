@@ -786,8 +786,6 @@ function astemp_options_page3() {
                     </div>
                 </div>
             </div>
-
-            
             <!--PRブロックの設定-->
             <div class="metabox-holder">
                 <div id="toppage_logo_setting" class="postbox " >
