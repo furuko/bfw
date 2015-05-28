@@ -6,7 +6,6 @@ require_once('lib/functions/glnavi.php');
 require_once('lib/functions/home.php');
 require_once('lib/functions/footer.php');
 
-
 add_action( 'admin_menu', 'astemp_constants', 10 );
 function astemp_constants() {
 	/** Define Directory Location Constants */
@@ -44,5 +43,4 @@ function astemp_constants() {
 	if ( ! defined( 'ASTEMP_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
 		define( 'ASTEMP_LANGUAGES_URL', ASTEMP_LIBRARY_URL . '/languages' );
 	define( 'ASTEMP_WIDGETS_URL', ASTEMP_LIBRARY_URL . '/widgets' );
-
 }
