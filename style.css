@@ -85,6 +85,7 @@ img.alignleft {
 .main_title {
   border-bottom: double #666;
   padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .sub_title {
@@ -169,12 +170,28 @@ body {
   max-width: 1012px;
 }
 
+#main_content p {
+  line-height: 200%;
+  margin-bottom: 32px;
+}
+
 a {
   color: #666;
 }
 
 a:hover {
   color: #ccc;
+}
+
+/* ------------------------------------------------- *
+ *        画像回り込み
+ * ------------------------------------------------- */
+.img_left {
+  margin: 0px 10px 10px 0px;
+}
+
+.img_right {
+  margin: 0px 0px 10px 10px;
 }
 
 /* ================================================== *
@@ -269,6 +286,30 @@ header .header_right {
   }
 }
 /* ------------------------------------------------- *
+ *        bredcrumb
+ * ------------------------------------------------- */
+#breadcrumb {
+  font-size: 80%;
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+  padding: 1px 0;
+  overflow: hidden;
+}
+#breadcrumb .breadcrumb {
+  background: #fff url(images/common/slide-bk.png) repeat;
+  margin: 0px auto;
+}
+
+/* ------------------------------------------------- *
+ *        post_data
+ * ------------------------------------------------- */
+.post_data {
+  font-size: 80%;
+  text-align: right;
+  margin-bottom: 32px;
+}
+
+/* ------------------------------------------------- *
  *        Footer
  * ------------------------------------------------- */
 .page_top {
@@ -347,6 +388,7 @@ header .header_right {
 .footer_logo_link {
   border-bottom: 1px solid #666;
   margin-top: 8px;
+  margin-bottom: 32px;
   padding: 6px;
 }
 
@@ -390,22 +432,56 @@ header .header_right {
 #pr_box {
   text-align: center;
 }
-#pr_box img {
-  max-width: 46%;
+#pr_box ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#pr_box ul li {
+  width: 98%;
+  margin: 8px 0px;
+}
+#pr_box ul li img {
+  width: 100%;
+}
+#pr_box ul li .pr_block_title {
   margin-bottom: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
 }
 
 @media (min-width: 768px) {
   #pr_box {
     text-align: center;
   }
-  #pr_box img {
-    max-width: 31%;
-    margin-right: 8px;
-    margin-bottom: 16px;
-    margin-left: 8px;
+  #pr_box ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  #pr_box ul li {
+    width: 30%;
+    float: left;
+    margin: 8px 8px;
+  }
+  #pr_box ul li img {
+    width: 100%;
+  }
+}
+@media (min-width: 980px) {
+  #pr_box {
+    text-align: center;
+  }
+  #pr_box ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  #pr_box ul li {
+    width: 32%;
+    float: left;
+    margin: 6px 6px;
+  }
+  #pr_box ul li img {
+    width: 100%;
   }
 }
 /* ------------------------------------------------- *
@@ -413,6 +489,7 @@ header .header_right {
  * ------------------------------------------------- */
 .news {
   margin-bottom: 32px;
+  font-size: 85%;
 }
 
 .news-list li {

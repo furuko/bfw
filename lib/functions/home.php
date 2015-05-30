@@ -75,89 +75,89 @@ function astemp_home_3pr() {
     $pr_block = get_option('as_pr_block');
     $as_pr_img_type = get_option('as_pr_img_type');
     $as_pr_title_view = get_option('as_pr_title_view');
-    
+    $as_pr_block_title = get_option('as_pr_block_title');
     $pr_block1_img = get_option('as_pr_block1_img');
     $pr_block2_img = get_option('as_pr_block2_img');
     $pr_block3_img = get_option('as_pr_block3_img');
     $pr_block4_img = get_option('as_pr_block4_img');
     $pr_block5_img = get_option('as_pr_block5_img');
     $pr_block6_img = get_option('as_pr_block6_img');
-
-    if ($pr_block == "as_pr_block_off") {
-        echo "nasi";
+    if(empty($pr_block ) or $pr_block == "none" or $pr_block == "as_pr_block_off" ) {
+        echo "";
     } else {
+        
         if ($as_pr_title_view == "check") {
-            
+            echo "check ari";
             if(!empty($pr_block1_img )) {
                 $pr_block1_title = get_option('as_pr_block1_title');
-                $pr_block1_img = "<div class='pr_block'><a href='" . get_option('as_pr_block1_url') . "'><div class='pr_block_title'>".$pr_block1_title."</div><img src='" . get_option('as_pr_block1_img') . "' alt='" . get_option('as_pr_block1_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block1_img = "<li class='pr_block'><a href='" . get_option('as_pr_block1_url') . "'><div class='pr_block_title'>".$pr_block1_title."</div><img src='" . get_option('as_pr_block1_img') . "' alt='" . get_option('as_pr_block1_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
                
             }
             if(!empty($pr_block2_img )) {
                 $pr_block2_title = get_option('as_pr_block2_title');
-                $pr_block2_img = "<div class='pr_block'><a href='" . get_option('as_pr_block2_url') . "'><div class='pr_block_title'>".$pr_block2_title."</div><img src='" . get_option('as_pr_block2_img') . "' alt='" . get_option('as_pr_block2_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block2_img = "<li class='pr_block'><a href='" . get_option('as_pr_block2_url') . "'><div class='pr_block_title'>".$pr_block2_title."</div><img src='" . get_option('as_pr_block2_img') . "' alt='" . get_option('as_pr_block2_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block3_img )) {
                 $pr_block3_title = get_option('as_pr_block3_title');
-                $pr_block3_img = "<div class='pr_block'><a href='" . get_option('as_pr_block3_url') . "'><div class='pr_block_title'>".$pr_block3_title."</div><img src='" . get_option('as_pr_block3_img') . "' alt='" . get_option('as_pr_block3_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block3_img = "<li class='pr_block'><a href='" . get_option('as_pr_block3_url') . "'><div class='pr_block_title'>".$pr_block3_title."</div><img src='" . get_option('as_pr_block3_img') . "' alt='" . get_option('as_pr_block3_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block4_img )) {
                 $pr_block4_title = get_option('as_pr_block4_title');
-                $pr_block4_img = "<div class='pr_block'><a href='" . get_option('as_pr_block4_url') . "'><div class='pr_block_title'>".$pr_block4_title."</div><img src='" . get_option('as_pr_block4_img') . "' alt='" . get_option('as_pr_block4_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block4_img = "<li class='pr_block'><a href='" . get_option('as_pr_block4_url') . "'><div class='pr_block_title'>".$pr_block4_title."</div><img src='" . get_option('as_pr_block4_img') . "' alt='" . get_option('as_pr_block4_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block5_img )) {
                 $pr_block5_title = get_option('as_pr_block5_title');
-                $pr_block5_img = "<div class='pr_block'><a href='" . get_option('as_pr_block5_url') . "'><div class='pr_block_title'>".$pr_block5_title."</div><img src='" . get_option('as_pr_block5_img') . "' alt='" . get_option('as_pr_block5_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block5_img = "<li class='pr_block'><a href='" . get_option('as_pr_block5_url') . "'><div class='pr_block_title'>".$pr_block5_title."</div><img src='" . get_option('as_pr_block5_img') . "' alt='" . get_option('as_pr_block5_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block6_img )) {
                 $pr_block6_title = get_option('as_pr_block6_title');
-                $pr_block6_img = "<div class='pr_block'><a href='" . get_option('as_pr_block6_url') . "'><div class='pr_block_title'>".$pr_block6_title."</div><img src='" . get_option('as_pr_block6_img') . "' alt='" . get_option('as_pr_block6_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block6_img = "<li class='pr_block'><a href='" . get_option('as_pr_block6_url') . "'><div class='pr_block_title'>".$pr_block6_title."</div><img src='" . get_option('as_pr_block6_img') . "' alt='" . get_option('as_pr_block6_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
            
             
             echo "<section class='container inner'>\n";
             echo "<div id='pr_box'>";
-            echo "<h1 class='main_title'>Item Line Up</h1>";
+            echo  $as_pr_block_title_in;
+            echo "<ul>\n";
             echo $pr_block1_img;
             echo $pr_block2_img;
             echo $pr_block3_img;
             echo $pr_block4_img;
             echo $pr_block5_img;
             echo $pr_block6_img;
+            echo "</ul>\n";
             echo '</div>';
             echo '</section>';
-            
         } else {
-            
-            
-            if(!empty($pr_block1_img )) {
-                $pr_block1_img = "<div class='pr_block'><a href='" . get_option('as_pr_block1_url') . "'><div class='pr_block_title'>".$pr_block1_title."</div><img src='" . get_option('as_pr_block1_img') . "' alt='" . get_option('as_pr_block1_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+           if(!empty($pr_block1_img )) {
+                $pr_block1_img = "<li class='pr_block'><a href='" . get_option('as_pr_block1_url') . "'><div class='pr_block_title'>".$pr_block1_title."</div><img src='" . get_option('as_pr_block1_img') . "' alt='" . get_option('as_pr_block1_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block2_img )) {
-                $pr_block2_img = "<div class='pr_block'><a href='" . get_option('as_pr_block2_url') . "'><div class='pr_block_title'>".$pr_block2_title."</div><img src='" . get_option('as_pr_block2_img') . "' alt='" . get_option('as_pr_block2_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block2_img = "<li class='pr_block'><a href='" . get_option('as_pr_block2_url') . "'><div class='pr_block_title'>".$pr_block2_title."</div><img src='" . get_option('as_pr_block2_img') . "' alt='" . get_option('as_pr_block2_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block3_img )) {
-                $pr_block3_img = "<div class='pr_block'><a href='" . get_option('as_pr_block3_url') . "'><div class='pr_block_title'>".$pr_block3_title."</div><img src='" . get_option('as_pr_block3_img') . "' alt='" . get_option('as_pr_block3_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block3_img = "<li class='pr_block'><a href='" . get_option('as_pr_block3_url') . "'><div class='pr_block_title'>".$pr_block3_title."</div><img src='" . get_option('as_pr_block3_img') . "' alt='" . get_option('as_pr_block3_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block4_img )) {
-                $pr_block4_img = "<div class='pr_block'><a href='" . get_option('as_pr_block4_url') . "'><div class='pr_block_title'>".$pr_block4_title."</div><img src='" . get_option('as_pr_block4_img') . "' alt='" . get_option('as_pr_block4_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block4_img = "<li class='pr_block'><a href='" . get_option('as_pr_block4_url') . "'><div class='pr_block_title'>".$pr_block4_title."</div><img src='" . get_option('as_pr_block4_img') . "' alt='" . get_option('as_pr_block4_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block5_img )) {
-                $pr_block5_img = "<div class='pr_block'><a href='" . get_option('as_pr_block5_url') . "'><div class='pr_block_title'>".$pr_block5_title."</div><img src='" . get_option('as_pr_block5_img') . "' alt='" . get_option('as_pr_block5_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block5_img = "<li class='pr_block'><a href='" . get_option('as_pr_block5_url') . "'><div class='pr_block_title'>".$pr_block5_title."</div><img src='" . get_option('as_pr_block5_img') . "' alt='" . get_option('as_pr_block5_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
             if(!empty($pr_block6_img )) {
-                $pr_block6_img = "<div class='pr_block'><a href='" . get_option('as_pr_block6_url') . "'><div class='pr_block_title'>".$pr_block6_title."</div><img src='" . get_option('as_pr_block6_img') . "' alt='" . get_option('as_pr_block6_title') . "' class='img-" . $as_pr_img_type . "'></a></div>\n";
+                $pr_block6_img = "<li class='pr_block'><a href='" . get_option('as_pr_block6_url') . "'><div class='pr_block_title'>".$pr_block6_title."</div><img src='" . get_option('as_pr_block6_img') . "' alt='" . get_option('as_pr_block6_title') . "' class='img-" . $as_pr_img_type . "'></a></li>\n";
             }
 
             echo "<section class='container inner'>\n";
             echo "<div id='pr_box'>";
-            echo "<h1 class='main_title'>Item Line Up</h1>";
+            echo "<ul>\n";
             echo $pr_block1_img;
             echo $pr_block2_img;
             echo $pr_block3_img;
             echo $pr_block4_img;
             echo $pr_block5_img;
             echo $pr_block6_img;
+            echo "</ul>\n";
             echo '</div>';
             echo '</section>';
         }
@@ -171,9 +171,9 @@ function astemp_home_welcome() {
     $img_position = get_option('as_img_position');
     if (!empty($img_position)) {
         if ($img_position == 'left') {
-            $welcome_msg_img = '<img src="' . $welcome_msg_img . '" class="pull-left" />';
+            $welcome_msg_img = '<img src="' . $welcome_msg_img . '" class="pull-left img_left" />';
         } else {
-            $welcome_msg_img = '<img src="' . $welcome_msg_img . '" class="pull-right" />';
+            $welcome_msg_img = '<img src="' . $welcome_msg_img . '" class="pull-right img_right" />';
         }
     }
 

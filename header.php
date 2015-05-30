@@ -7,6 +7,8 @@
             wp_title('|', true, 'right');
             bloginfo('name');
             ?></title>
+        <link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css">
@@ -19,11 +21,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" type="text/javascript"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" type="text/javascript"></script>
         <![endif]-->
-        <?php
-        if (is_singular())
-            wp_enqueue_script("comment-reply");
-        wp_head();
-        ?>
+        <?php wp_head(); ?>
     </head>
 
     <body id="page_top" <?php body_class(); ?>>   

@@ -50,16 +50,16 @@ function astemp_footer_map() {
             $kihon_info_ad = "<div class='kihon_info'>".  $kihon_info_ad ."</div>";
         }
         if (!empty($kihon_info_tel)) {
-            $kihon_info_tel = "<div class='kihon_info'><span class='glyphicon glyphicon-earphone' aria-hidden='true'></span> ＴＥＬ：".  $kihon_info_tel ."</div>";
+            $kihon_info_tel = "<div class='kihon_info'><span class='glyphicon glyphicon-earphone' aria-hidden='true'></span> ＴＥＬ：".  $kihon_info_tel ."</div>\n";
         }
         if (!empty($kihon_info_fax)) {
-            $kihon_info_fax = "<div class='kihon_info'><span class='glyphicon glyphicon-save-file' aria-hidden='true'></span> ＦＡＸ：".  $kihon_info_fax ."</div>";
+            $kihon_info_fax = "<div class='kihon_info'><span class='glyphicon glyphicon-save-file' aria-hidden='true'></span> ＦＡＸ：".  $kihon_info_fax ."</div>\n";
         }
         if (!empty($kihon_info_rest)) {
-            $kihon_info_rest = "<div class='kihon_info'><span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> 定休日：".  $kihon_info_rest ."</div>";
+            $kihon_info_rest = "<div class='kihon_info'><span class='glyphicon glyphicon-info-sign' aria-hidden='true'></span> 定休日：".  $kihon_info_rest ."</div>\n";
         }
         if (!empty($kihon_info_time)) {
-            $kihon_info_time = "<div class='kihon_info'><span class='glyphicon glyphicon-time' aria-hidden='true'></span> 時　間：".  $kihon_info_time ."</div>";
+            $kihon_info_time = "<div class='kihon_info'><span class='glyphicon glyphicon-time' aria-hidden='true'></span> 時　間：".  $kihon_info_time ."</div>\n";
         }
         echo  $kihon_info_name  .  $kihon_info_post .  $kihon_info_ad  ;
 
@@ -138,7 +138,7 @@ function astemp_produced() {
         echo $produced_txt;
     } else {
         if ($produced_txt == "produced_on") {
-            $produced_txt = "<a href='#' target='_blank'>produce by AS-Template</a>";
+            $produced_txt = "<a href='#' target='_blank'>produce by AS-Template</a>\n";
             echo $produced_txt;
         } else if ($produced_txt == "produced_off") {
             $produced_txt = "";
