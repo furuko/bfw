@@ -63,6 +63,9 @@ function register_astemp_setting() {
     register_setting('astemp-setting-group2', 'as_profile_img');
     register_setting('astemp-setting-group2', 'as_profile_img_type');
     register_setting('astemp-setting-group2', 'as_profile_com');
+    
+    register_setting('astemp-setting-group2', 'as_data_page');//未登録
+    register_setting('astemp-setting-group2', 'as_data_single');//未登録
 
     //no-image
     register_setting('astemp-setting-group2', 'as_no_img');
@@ -92,6 +95,7 @@ function register_astemp_setting() {
     register_setting('astemp-setting-group3', 'as_pr_block');
     register_setting('astemp-setting-group3', 'as_pr_title_view');//未登録
     
+    register_setting('astemp-setting-group3', 'as_pr_block_title');//未登録
     
     register_setting('astemp-setting-group3', 'as_pr_block1_title');
     register_setting('astemp-setting-group3', 'as_pr_block1_img');
@@ -619,6 +623,50 @@ function astemp_options_page2() {
                     </div>
                 </div>
             </div>
+            
+            <!--更新日時の表示設定-->
+            <div class="metabox-holder">
+                <div id="toppage_logo_setting" class="postbox " >
+                    <h3 class='hndle'><span>更新日時の表示設定</span></h3>
+                    <div class="inside">
+                        <div class="main">
+
+                            <?php
+                            $as_data_single = trim(get_option('as_data_single'));
+                            if (isset($as_data_single) && $as_data_single !== '') {
+                                $as_data_single = trim(get_option('as_data_single'));
+                            } else {
+                                $as_data_single = '';
+                            }
+
+                            $as_data_page = trim(get_option('as_data_page'));
+                            if (isset($as_data_page) && $as_data_page !== '') {
+                                $as_data_page = trim(get_option('as_data_page'));
+                            } else {
+                                $as_ftnavi = '';
+                            }
+                            ?>
+
+                            <p>ブログ記事や固定ページがアップされた日や更新日の表示設定を行います。</p>
+                            <h4><span style="color:#cc0000; font-size:14px;"> ■ 表示する場合はチェックを入れてください</span></h4>
+                            <table class="form-table">
+                                <tbody>
+                                    <tr>
+                                      <th scope="row">ブログ記事の更新日時</th>
+                                      <td><label for="as_data_single"><input name="as_data_single" type="checkbox" id="as_data_single" value="check" <?php checked(get_option('as_data_single'), 'check'); ?> />表示する</label></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">固定ページの更新日時</th>
+                                      <td><label for="as_data_page"><input name="as_data_page" type="checkbox" id="as_data_page" value="check" <?php checked(get_option('as_data_page'), 'check'); ?> />表示する</label></td>
+                                    </tr>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
 
             <!--アイキャッチ設定-->
             <div class="metabox-holder">
@@ -786,8 +834,6 @@ function astemp_options_page3() {
                     </div>
                 </div>
             </div>
-
-            
             <!--PRブロックの設定-->
             <div class="metabox-holder">
                 <div id="toppage_logo_setting" class="postbox " >
@@ -819,11 +865,26 @@ function astemp_options_page3() {
                                 $as_pr_title_view = '';
                             }
                             
+                            
+                            $as_pr_block = trim(get_option('as_pr_block'));
+                            if (isset($as_pr_block) && $as_pr_block !== '') {
+                                $as_pr_block = trim(get_option('as_pr_block'));
+                            } else {
+                                $as_pr_block = 'none';
+                            }
                             ?>
+                            
+                            
 
 
 <table class="form-table">
                                 <tbody>
+                                    <tr>
+                                        <th scope="row">
+                                            <label for="as_pr_block_title">タイトル</label>
+                                        </th>
+                                        <td><input type="text" id="as_pr_block_title" class="regular-text" name="as_pr_block_title" value="<?php echo get_option('as_pr_block_title'); ?>"></td>
+                                    </tr>
                                     <tr>
                                       <th scope="row">PRアイテムの表示</th>
                  
@@ -1033,7 +1094,7 @@ function astemp_options_page3() {
                     <h3 class='hndle'><span>新着情報　お知らせの設定</span></h3>
                     <div class="inside">
                         <div class="main">
-                            <p class="setting_description">トップページにウェルカムメッセージを表示させることが出来ます。入力がない場合は何も表示されません。</p>
+                            <p class="setting_description"></p>
                             <h4><span style="color:#cc0000; font-size:14px;">■ 何件の新着お知らせを表示させますか</span></h4>
                             <?php
                             $as_news_view = trim(get_option('as_news_view'));

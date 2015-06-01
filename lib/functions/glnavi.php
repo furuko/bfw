@@ -57,19 +57,19 @@ function astemp_ftnavi() {
     $as_ftnavi = get_option('as_ftnavi');
     
     if($as_ftnavi == true){
-        echo '<nav class="navbar-collapse collapse" id="navigation" role="navigation">';
+        echo '<nav>';
         wp_nav_menu(array(
             'theme_location' => 'Footer',
-            'items_wrap'      => '<ul id="%1$s" class="nav navbar-nav">%3$s</ul>'
+            'items_wrap'      => '<ul id="%1$s" class="">%3$s</ul>'
             ));
         echo '</nav>';
     } else { ?>
-        <nav class="navbar-collapse collapse" id="navigation" role="navigation">
-                    <ul class="nav navbar-nav">
+        <nav>
+                    <ul>
 <?php
     $pages = get_pages();
     foreach ( $pages as $page ) {
-        $option = '<li><a href="' . get_page_link( $page->ID ) . '" class="sample8">';
+        $option = '<li><a href="' . get_page_link( $page->ID ) . '">';
         $option .= $page->post_title;
         $option .= '</a></li>';
         echo $option;
