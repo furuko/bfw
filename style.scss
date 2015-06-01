@@ -96,6 +96,7 @@ img.alignleft {
 .main_title {
     border-bottom:double $color_line;
     padding-bottom:8px;
+    margin-bottom:16px;
 }
 .sub_title {
     font-size:150%;
@@ -168,6 +169,10 @@ body {
 
 #main_content {
 
+    p {
+        line-height: 200%;
+        margin-bottom:32px;
+    }
 }
 
 #side_content {
@@ -181,8 +186,15 @@ a:hover {
     color:$color_link2;
 }
 
-
-
+/* ------------------------------------------------- *
+ *        画像回り込み
+ * ------------------------------------------------- */
+.img_left {
+    margin:0px 10px 10px 0px;
+}
+.img_right {
+    margin:0px 0px 10px 10px;
+}
 /* ================================================== *
  *
  *    content
@@ -202,6 +214,11 @@ header {
         padding:0px;
         margin:0px 0px 0px 0px ;
     }
+    
+    #logo {
+        border:1px solid #000;
+    }
+    
     .header_left {
         text-align: center;
     }
@@ -289,7 +306,36 @@ header {
         }
     }
 }
+/* ------------------------------------------------- *
+ *        bredcrumb
+ * ------------------------------------------------- */
+#breadcrumb {
+    font-size:80%;
+    border-top:1px dotted $color_ccc;
+    border-bottom:1px dotted $color_ccc;
+    padding:1px 0;
+    overflow:hidden;
 
+    .breadcrumb {
+        background: $color_fff  url(images/common/slide-bk.png) repeat;
+        margin:0px auto;
+    }
+
+
+}
+
+
+
+
+/* ------------------------------------------------- *
+ *        post_data
+ * ------------------------------------------------- */
+
+.post_data {
+    font-size:80%;
+    text-align:right;
+    margin-bottom:32px;
+}
 /* ------------------------------------------------- *
  *        Footer
  * ------------------------------------------------- */
@@ -323,45 +369,15 @@ header {
     padding:8px 0px;
     border-top:1px dotted $color_line;
     border-bottom:1px dotted $color_line;
-    /*マウスオーバーのエフェクト*/
-    .sample8 {
-
-        li a{
-            border-bottom:1px dotted $color_ccc;
-            position: relative;
-            z-index: 2;
-        }
-        li a::after {
-            display: block;
-            content: "";
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            margin: auto;
-            color:$color_fff;
-            background: $color_black;
-            transition: .3s;
-        }
-        li a:hover::after {
-            color:$color_fff;
-            width: 100%;
-            height: 100%;
-        }
-        li a:hover {
-            color:$color_fff;
-        }
-        /*マウスオーバーのエフェクト*/
+    
+    .menu {
+        border:0px solid $color_line;
     }
-
     ul {
         list-style:none;
         margin:0px;
         padding:0px;
+        
         li {
             float:left;
             margin:0px;
@@ -370,11 +386,11 @@ header {
         }
     }
 
-
 }
 .footer_logo_link {
     border-bottom:1px solid $color_line;
     margin-top:8px;
+    margin-bottom:32px;
     padding:6px;
 }
 
@@ -425,11 +441,24 @@ header {
 #pr_box {
     text-align:center;
 
-    img {
-        max-width:46%;
-        margin-bottom:8px;
-        margin-left:4px;
-        margin-right:4px;
+    ul {
+        list-style:none;
+        margin:0px;
+        padding:0px;
+
+        li {
+            width:98%;
+            margin:8px 0px;
+
+            img {
+                width:100%;
+            }
+
+            .pr_block_title {
+                margin-bottom:8px;
+
+            }
+        }
     }
 }
 
@@ -437,21 +466,51 @@ header {
     #pr_box {
         text-align:center;
 
-        img {
-            max-width:31%;
-            margin-right:8px;
-            margin-bottom:16px;
-            margin-left:8px;
+        ul {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+
+            li {
+                width:30%;
+                float:left;
+                margin:8px 8px;
+
+                img {
+                    width:100%;
+                }
+            }
         }
     }
 }
+@media(min-width:980px) {
+    #pr_box {
+        text-align:center;
 
+        ul {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+
+            li {
+                width:32%;
+                float:left;
+                margin:6px 6px;
+
+                img {
+                    width:100%;
+                }
+            }
+        }
+    }
+}
 /* ------------------------------------------------- *
  *        News
  * ------------------------------------------------- */
 
 .news {
     margin-bottom:32px;
+    font-size:85%;
 }
 .news-list {
 

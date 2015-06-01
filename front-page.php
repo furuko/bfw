@@ -9,8 +9,7 @@
         <!-- /Slide -->
 
         <!--PR_BOX-->
-            <?php astemp_home_3pr(''); ?>
-            
+            <?php astemp_home_3pr(''); ?>  
         <!--/PR_BOX-->
 
         <div id="wrap">

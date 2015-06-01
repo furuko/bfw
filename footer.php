@@ -7,6 +7,8 @@
                     <?php astemp_ftnavi(''); ?>
                 </div>
             </div>
+            
+
             <div class="container inner">
                 <?php astemp_footer_map(''); ?>
                 <div class="text-center copyright margin-top-md">&copy; <?php bloginfo('name'); ?> All Rights Reserved.　<?php astemp_produced(''); ?></div>

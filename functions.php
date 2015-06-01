@@ -2,12 +2,16 @@
 require_once('lib/admin/admin.php');
 
 require_once('lib/functions/head.php');
+require_once('lib/functions/pankuzu.php');
 require_once('lib/functions/glnavi.php');
 require_once('lib/functions/home.php');
+require_once('lib/functions/data.php');
 require_once('lib/functions/footer.php');
-
+require_once('lib/functions/func.php');
+require_once('lib/functions/custom_menu.php');
 
 add_action( 'admin_menu', 'astemp_constants', 10 );
+
 function astemp_constants() {
 	/** Define Directory Location Constants */
 	define( 'ASTEMP_PARENT_DIR', get_template_directory() );
@@ -46,3 +50,9 @@ function astemp_constants() {
 	define( 'ASTEMP_WIDGETS_URL', ASTEMP_LIBRARY_URL . '/widgets' );
 
 }
+
+//絵文字削除
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('admin_print_scripts', 'print_emoji_detection_script');
+remove_action('wp_print_styles', 'print_emoji_styles' );
+remove_action('admin_print_styles', 'print_emoji_styles');
