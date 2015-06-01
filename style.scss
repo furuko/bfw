@@ -364,45 +364,15 @@ header {
     padding:8px 0px;
     border-top:1px dotted $color_line;
     border-bottom:1px dotted $color_line;
-    /*マウスオーバーのエフェクト*/
-    .sample8 {
-
-        li a{
-            border-bottom:1px dotted $color_ccc;
-            position: relative;
-            z-index: 2;
-        }
-        li a::after {
-            display: block;
-            content: "";
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            margin: auto;
-            color:$color_fff;
-            background: $color_black;
-            transition: .3s;
-        }
-        li a:hover::after {
-            color:$color_fff;
-            width: 100%;
-            height: 100%;
-        }
-        li a:hover {
-            color:$color_fff;
-        }
-        /*マウスオーバーのエフェクト*/
+    
+    .menu {
+        border:0px solid $color_line;
     }
-
     ul {
         list-style:none;
         margin:0px;
         padding:0px;
+        
         li {
             float:left;
             margin:0px;
@@ -410,7 +380,6 @@ header {
             margin-right:16px;
         }
     }
-
 
 }
 .footer_logo_link {

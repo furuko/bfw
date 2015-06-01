@@ -7,9 +7,11 @@ require_once('lib/functions/glnavi.php');
 require_once('lib/functions/home.php');
 require_once('lib/functions/data.php');
 require_once('lib/functions/footer.php');
-
+require_once('lib/functions/func.php');
+require_once('lib/functions/custom_menu.php');
 
 add_action( 'admin_menu', 'astemp_constants', 10 );
+
 function astemp_constants() {
 	/** Define Directory Location Constants */
 	define( 'ASTEMP_PARENT_DIR', get_template_directory() );
