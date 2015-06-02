@@ -9,6 +9,9 @@ require_once('lib/functions/data.php');
 require_once('lib/functions/footer.php');
 require_once('lib/functions/func.php');
 require_once('lib/functions/custom_menu.php');
+require_once('lib/functions/side.php');
+require_once('lib/functions/layout.php');
+require_once('lib/functions/widget.php');
 
 add_action( 'admin_menu', 'astemp_constants', 10 );
 

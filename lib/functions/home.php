@@ -180,8 +180,10 @@ function astemp_home_welcome() {
     echo '<h1 class="main_title center">';
     echo $welcome_msg_title;
     echo '</h1>';
+    echo "<p>";
     echo $welcome_msg_img;
     echo $welcome_msg;
+    echo "</p>";
 }
 
 function astemp_home_news() {

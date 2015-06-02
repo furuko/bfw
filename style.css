@@ -253,6 +253,107 @@ header .header_right {
   margin-bottom: 32px; }
 
 /* ------------------------------------------------- *
+ *        Side
+ * ------------------------------------------------- */
+.side-profile {
+  border-radius: 8px;
+  border: 1px dotted #666;
+  padding: 12px;
+  margin-top: 32px; }
+  .side-profile .side-profile_title {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 4px;
+    margin-bottom: 16px;
+    border-radius: 16px; }
+  .side-profile img {
+    width: 100%; }
+  .side-profile .profile_name {
+    text-align: center; }
+  .side-profile .profile_name {
+    text-align: center;
+    margin-bottom: 8px; }
+
+.side-widget {
+  margin-top: 32px;
+  /*****************************
+  *カレンダーに枠を付ける
+  *****************************/
+  /*土曜日のヘッダーセル*/
+  /*日曜日のヘッダーセル*/ }
+  .side-widget ul {
+    list-style: none;
+    margin: 0px 4px 0px 4px;
+    padding: 0px;
+    /*マウスオーバーのエフェクト*/
+    /*マウスオーバーのエフェクト*/ }
+    .side-widget ul li a {
+      padding: 8px 4px;
+      display: block;
+      border-bottom: 1px dotted #ccc;
+      position: relative;
+      z-index: 2; }
+    .side-widget ul li a::after {
+      display: block;
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      margin: auto;
+      color: #fff;
+      background: #333;
+      transition: .3s; }
+    .side-widget ul li a:hover::after {
+      color: #fff;
+      width: 100%;
+      height: 100%; }
+    .side-widget ul li a:hover {
+      color: #fff;
+      text-decoration: none; }
+  .side-widget #wp-calendar {
+    border-collapse: collapse;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-top-style: solid;
+    border-right-style: solid;
+    border-top-color: #999;
+    border-right-color: #999;
+    width: 100%; }
+  .side-widget #wp-calendar thead tr th {
+    padding: 8px 0px;
+    text-align: center;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #999;
+    border-left-color: #999; }
+  .side-widget #wp-calendar thead tr th:nth-child(6) {
+    background-color: #C0DDF9; }
+  .side-widget #wp-calendar thead tr th:nth-child(7) {
+    background-color: #F5D0D3; }
+  .side-widget #wp-calendar td {
+    text-align: center;
+    padding: 8px 0px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-bottom-color: #999;
+    border-left-color: #999; }
+  .side-widget #wp-calendar caption {
+    font-weight: bold;
+    text-align: left; }
+  .side-widget #wp-calendar tbody tr #today {
+    background-color: #CCC; }
+
+/* ------------------------------------------------- *
  *        Footer
  * ------------------------------------------------- */
 .page_top {
