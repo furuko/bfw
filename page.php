@@ -5,7 +5,7 @@
 <div class="container inner">
     
     <div class="row">
-        <div class="col-xs-12 col-sm-8 margin-top-md" id="main_content">
+        <div class="col-xs-12 col-sm-8 <?php astemp_layout_main('');?> margin-top-md" id="main_content">
             <?php
             if (have_posts()) : // WordPress ループ
                 while (have_posts()) : the_post(); // 繰り返し処理開始 

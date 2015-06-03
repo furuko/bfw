@@ -17,7 +17,7 @@
             <div class="container inner">
                 <div class="row">
 
-                    <div class="col-xs-12 col-md-8">
+                    <div class="col-xs-12 col-sm-8 <?php astemp_layout_main('');?>">
                         <div id="main_content">
                             <!--news-->
                             <section class="news">

@@ -11,11 +11,11 @@
         Tags: 
 */
 $color_body:#fff;
-$color_main:#000;
+$color_main:#333;
 $color_txt:#666;
 $color_fff:#fff;
 $color_ccc:#ccc;
-$color_black:#333;
+$color_link_back:#333;
 $color_line:#666;
 $color_back:#F2F2F2;
 $color_link:#666;
@@ -94,21 +94,52 @@ img.alignleft {
     text-align: left;
 }
 .main_title {
+    font-size:120%;
     border-bottom:double $color_line;
     padding-bottom:8px;
     margin-bottom:16px;
 }
 .sub_title {
-    font-size:150%;
+    font-size:120%;
     border-bottom:1px solid $color_line;
     padding-bottom:8px;
 }
+.sub_title_box {
+    font-size:100%;
+}
+.side_title {
+    font-size:120%;
+    border-bottom:double $color_line;
+    padding-bottom:8px;
+}
+
+.comments-header {
+    font-size:120%;
+}
+
 .font-big {
     font-size:180%;
 }
 .font-small {
     font-size:80%;
 }
+
+@media(min-width:768px) {
+    .main_title {
+        font-size:150%;
+    }
+    .sub_title {
+        font-size:150%;
+    }
+    .side_title {
+        font-size:120%;
+    }
+
+    .comments-header {
+        font-size:150%;
+    }
+}
+
 /* ------------------------------------------------- *
  *        margin
  * ------------------------------------------------- */
@@ -153,7 +184,6 @@ img.alignleft {
 }
 
 
-
 /* ================================================== *
  *
  *    base style 独自設定はここから
@@ -172,6 +202,11 @@ body {
     p {
         line-height: 200%;
         margin-bottom:32px;
+    }
+
+    img {
+        max-width:100%;
+        height:auto;
     }
 }
 
@@ -210,15 +245,16 @@ a:hover {
 
 header {
 
-    h1 {
+    h1#logo  {
         padding:0px;
         margin:0px 0px 0px 0px ;
     }
-    
-    #logo {
-        border:1px solid #000;
+
+    p#logo {
+        font-size:200%;
+        padding:0px;
+        margin:0px 0px 0px 0px ;
     }
-    
     .header_left {
         text-align: center;
     }
@@ -280,7 +316,7 @@ header {
         height: 0;
         margin: auto;
         color:$color_fff;
-        background: $color_black;
+        background: $color_link_back;
         transition: .3s;
     }
     li a.sample8:hover::after {
@@ -319,23 +355,154 @@ header {
     .breadcrumb {
         background: $color_fff  url(images/common/slide-bk.png) repeat;
         margin:0px auto;
+
+        .bread_div {
+            display:inline;
+        }
     }
 
-
 }
-
 
 
 
 /* ------------------------------------------------- *
- *        post_data
+ *        Side
  * ------------------------------------------------- */
+.side-profile {
+    border-radius: 8px;
+    border:1px dotted $color_line;
+    padding:12px;
+    margin-top:32px;
 
-.post_data {
-    font-size:80%;
-    text-align:right;
-    margin-bottom:32px;
+    .side-profile_title {
+        text-align: center;
+        background: $color_link_back;
+        color: $color_fff;
+        padding:4px;
+        margin-bottom:16px;
+        border-radius: 16px;
+    }
+
+    img {
+        width:100%;
+    }
+    .profile_name {
+        text-align: center;
+    }
+    .profile_name {
+        text-align: center;
+        margin-top:8px;
+        margin-bottom:8px;
+    }
+    .profile_com {
+    }
 }
+.side-widget {
+    margin-top:32px;
+    ul {
+        list-style: none;
+        margin:0px 4px 0px 4px ;
+        padding:0px;
+
+        /*マウスオーバーのエフェクト*/
+        li a {
+            padding:8px 4px;
+            display:block;
+            border-bottom:1px dotted $color_ccc;
+            position: relative;
+            z-index: 2;
+        }
+        li a::after {
+            display: block;
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            margin: auto;
+            color:$color_fff;
+            background: $color_link_back;
+            transition: .3s;
+        }
+        li a:hover::after {
+            color:$color_fff;
+            width: 100%;
+            height: 100%;
+        }
+        li a:hover {
+            color:$color_fff;
+            text-decoration: none;
+        }
+        /*マウスオーバーのエフェクト*/
+    }
+
+    /*****************************
+    *カレンダーに枠を付ける
+    *****************************/
+
+    #calendar_wrap caption {
+        padding:5px;
+        text-align: center;
+        color:$color_txt;
+
+    }
+    #wp-calendar {
+        border-collapse: collapse;
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-top-color: $color_ccc;
+        border-right-color: $color_ccc;
+        width: 100%;
+        //margin-left: 35px;
+    }
+    #wp-calendar thead tr th {
+        padding:8px 0px;
+        text-align: center;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-bottom-color: $color_ccc;
+        border-left-color: $color_ccc;
+    }
+
+    /*土曜日のヘッダーセル*/
+    #wp-calendar thead tr th:nth-child(6){
+        background-color: #C0DDF9;
+    }
+
+    /*日曜日のヘッダーセル*/
+    #wp-calendar thead tr th:nth-child(7){
+        background-color: #F5D0D3;
+    }
+
+    #wp-calendar td {
+        text-align: center;
+        padding:8px 0px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-bottom-color: $color_ccc;
+        border-left-color: $color_ccc;
+
+    }
+    #wp-calendar caption {
+        font-weight: bold;
+        text-align: left;
+    }
+    #wp-calendar tbody tr #today {
+        background-color: $color_ccc;
+    }
+}
+
+
 /* ------------------------------------------------- *
  *        Footer
  * ------------------------------------------------- */
@@ -350,7 +517,7 @@ header {
         color:$color_fff;
         border-radius: 10px;
         padding:8px;
-        background: $color_black;
+        background: $color_link_back;
         opacity: 0.6
     }
     a:hover {
@@ -369,7 +536,7 @@ header {
     padding:8px 0px;
     border-top:1px dotted $color_line;
     border-bottom:1px dotted $color_line;
-    
+
     .menu {
         border:0px solid $color_line;
     }
@@ -377,7 +544,7 @@ header {
         list-style:none;
         margin:0px;
         padding:0px;
-        
+
         li {
             float:left;
             margin:0px;
@@ -533,7 +700,7 @@ header {
     }
 }
 .media img {
-    width:100px;
+    max-width:100%;
     float:left;
     margin-right:16px;
 }
@@ -552,7 +719,300 @@ header {
     .welcome {
 
         img {
-            max-width:250px;
+            width:260px;
         }
     }
 }
+
+/* ================================================== *
+ *
+ *    Archive
+ *
+ * ================================================== */
+.archive_box {
+    border-bottom:0px dotted $color_line;
+    margin-left:0px;
+    margin-bottom:32px;
+    margin-right:0px;
+}
+
+.arctive-box {
+
+    height:auto;
+}
+.archive-line {
+    margin:0px 0px 32px 0px ;
+}
+.line_left {
+    padding:0px;
+    overflow:hidden;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+.line_right {
+
+}
+@media(min-width:768px) {
+    .arctive-box {
+
+        height:300px;
+    }
+}
+
+/* ================================================== *
+ *
+ *    Post-parts
+ *
+ * ================================================== */
+
+.post_data {
+    font-size:80%;
+    text-align:right;
+    margin-bottom:32px;
+}
+
+.eb_cat {
+    font-size:80%;
+    margin-bottom:16px;
+}
+
+.no-thum-box {
+    width:160px;
+    margin:0 auto;
+    padding:40px 0;
+    text-align: center;
+    vertical-align: middle;
+    color:$color_fff;
+    background: $color_link_back; 
+}
+
+/* ------------------------------------------------- *
+ *        btn
+ * ------------------------------------------------- */
+
+.as-btn {
+    font-size:80%;
+    float:right;
+    padding:4px 8px;
+    background: $color_link_back; 
+    color: $color_fff; 
+    border-radius: 8px;
+}
+.as-btn:hover {
+    color: $color_link_back; 
+    background: $color_ccc;
+    text-decoration: none;
+}
+
+
+.as-com-btn {
+    clear:both;
+    margin-top:80px;
+    font-size:80%;
+    padding:8px 8px;
+    background: $color_link_back; 
+    color: $color_fff; 
+    border-radius: 8px;
+}
+.as-com-btn:hover {
+    color: $color_link_back; 
+    background: $color_ccc;
+    text-decoration: none;
+}
+
+.reply-btn {
+    text-align:right;
+    padding-right:8px;
+
+    a{
+        clear:both;
+        margin-top:80px;
+        font-size:80%;
+        padding:8px 8px;
+        background: $color_link_back; 
+        color: $color_fff; 
+        border-radius: 8px;
+    }
+    a:hover {
+        color: $color_link_back; 
+        background: $color_ccc;
+        text-decoration: none; 
+    }
+
+}
+
+/* ------------------------------------------------- *
+ *        ページ送り
+ * ------------------------------------------------- */
+.page-navi {
+    font-size:80%;
+    margin-bottom:16px;
+
+    .previous {
+        margin-top:8px;
+        border:1px solid $color_ccc;
+        border-radius: 20px;
+
+        a {
+            padding:8px 16px;
+            display:block;
+            border-radius: 20px;
+        }
+        a:hover {
+            color:$color_link_back;
+            background:$color_ccc;
+            text-decoration:none;
+        }
+    }
+}
+
+/*----------------------------
+Social設定
+----------------------------*/
+
+.as-sns-btn {
+  text-align: center;
+  padding:16px 8px 8px 8px;
+  margin: 10px 0px;
+  background: $color_back;
+}
+.as-sns-btn li {
+  display: inline-block;
+  vertical-align: top;
+  margin-right:8px;
+}
+
+.as-facebook .fb-like > span {
+  vertical-align: top !important;
+}
+
+.as-twitter {
+  width: 92px;
+}
+
+.as-googleplus {
+  width: 80px;
+}
+
+
+#btn-sns {
+    display:block;
+  overflow:hidden;
+  border: 0px solid #000;
+  margin-bottom: 10px;
+}
+#btn-sns ul {
+  padding: 0 0 0px;
+}
+#btn-sns li {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 50px;
+}
+#btn-sns li a {
+  color: #ccc;
+}
+#btn-sns li a:hover {
+  color: $color_main;
+}
+
+.post-follow-share {
+    text-align:center;
+    border:0px dotted $color_ccc;
+    margin-bottom:32px;
+    overflow:hidden;
+    
+    h4 {
+        font-weight:bold;
+        color:$color_txt;
+        margin:0px auto;
+        padding:20px 0;
+        background:$color_back;
+    }
+    
+    .post-follow {
+        
+        ul {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+            border:1px dotted $color_ccc;
+            overflow:hidden;
+            
+            li.post-follow-twitter {
+                width:50%;
+                float:left;
+                border-right:1px dotted $color_ccc;
+  
+                
+                a {
+                    padding:20px;
+                    display:block;
+                    background:$color_fff;
+                }
+                a:hover {
+                    color:$color_fff;
+                    display:block;
+                    background:#33ccff;
+                    text-decoration:none;
+                }
+            }
+            li.post-follow-feedly  {
+                width:50%;
+                float:right;
+
+                
+                a {
+                    padding:20px;
+                    display:block;
+                    background:$color_fff;
+                }
+                a:hover {
+                    color:$color_fff;
+                    display:block;
+                    background:#5acf5f;
+                    text-decoration:none;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ================================================== *
+ *
+ *    comment
+ *
+ * ================================================== */
+
+#comments {
+
+    ul {
+        padding:0px;
+        margin:0px ;
+
+        .children {
+            border-left:3px dotted $color_ccc;
+            padding:0px;
+            padding-left:10px;
+        }
+    }
+}
+
+.panel {
+    padding:0px;
+    margin:0px ;
+}
+
+.panel-default{
+    padding:0px;
+    margin:0px 0px 10px 0px ;
+}
+.comment-author {
+    font-size:80%;
+}
+

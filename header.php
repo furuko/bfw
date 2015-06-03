@@ -14,18 +14,25 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css">
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen">
         <link href="<?php echo get_stylesheet_directory_uri(); ?>/css/slide.css" rel="stylesheet">
-        <style>
-            @import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
-        </style>
+
+        <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/source/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri(); ?>/source/jquery.fancybox.js?v=2.1.5"></script>
+        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(); ?>/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.fancybox').fancybox();
+		});
+	</script>
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" type="text/javascript"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" type="text/javascript"></script>
         <![endif]-->
         <?php wp_head(); ?>
+        <?php astemp_analytics(); ?>
     </head>
 
-    <body id="page_top" <?php body_class(); ?>>   
-
+    <body id="page_top" <?php body_class(); ?>>
+        <?php as_social_tag(); ?>
         <!-- header -->
         <header id="toppage" class="navbar navbar-default" role="banner">
             <div class="container inner">

@@ -180,8 +180,10 @@ function astemp_home_welcome() {
     echo '<h1 class="main_title center">';
     echo $welcome_msg_title;
     echo '</h1>';
+    echo "<p>";
     echo $welcome_msg_img;
     echo $welcome_msg;
+    echo "</p>";
 }
 
 function astemp_home_news() {
@@ -205,16 +207,18 @@ function astemp_home_news() {
             echo'</ul>';
         endif;
         wp_reset_query();
-    }else {
+    } else {
         query_posts('showposts=' . $as_news_view . '');
-        echo '<ul class="media-list news-list">';
+        echo "<h1 class='main_title'>What's New</h1>\n";
+        echo "<ul class='media-list news-list'>\n";
         if (have_posts()) : while (have_posts()) : the_post();
-                echo '<li class="media">';
+                echo "<li class='media'>";
                 if (has_post_thumbnail()) {
                     echo '<a href="';
                     the_permalink();
                     echo '">';
-                    the_post_thumbnail(array(80, 80));
+                    the_post_thumbnail('thumb80',
+                                                        array( 'alt' =>$title, 'title' => $title));
                     echo '</a>';
                 } else {
 
@@ -224,20 +228,20 @@ function astemp_home_news() {
                         the_permalink();
                         echo '"><img src="';
                         echo get_template_directory_uri();
-                        echo '/images/sample_img/sample_photo.png" /></a>';
+                        echo '/images/sample_img/sample_photo.png" width="80px" /></a>';
                     } else {
                         ?>
                         <a href="<?php the_permalink(); ?>"><img src="<?php echo $as_no_img; ?>" /></a>
                         <?php
                     }
                 }
-                echo '<p class="postdate"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> ';
+                echo '<div class="postdate"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> ';
                 echo get_the_date('Y年n月j日');
-                echo '</p><h2><a href="';
+                echo '</div><h2 class="news_title"><a href="';
                 the_permalink();
                 echo '">';
                 the_title();
-                echo '</a></h2></li>';
+                echo "</a></h2></li>\n";
             endwhile;
             echo'</ul>';
         endif;
